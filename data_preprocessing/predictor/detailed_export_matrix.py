@@ -5,7 +5,7 @@ if not os.path.exists('predictors_raw/swine_trade_exp'):
     os.makedirs('predictors_raw/swine_trade_exp')
 
 # Read the CSV file
-df = pd.read_csv("C:/Users/iblag/Desktop/predictors/swine_export_FAO.csv")
+df = pd.read_csv("swine_export_FAO.csv")
 
 # Replace "United States of America" with "USA"
 df['Reporter Countries'] = df['Reporter Countries'].replace('United States of America', 'USA')
@@ -31,8 +31,8 @@ all_countries = all_countries = ['China', 'Italy', 'Netherlands', 'Turkey', 'Fra
 # Filter the DataFrame to get only 'Export Quantity' of 'Swine / pigs'
 df_export_cattle = df[(df['Element'] == 'Export Quantity') & (df['Item'] == 'Swine / pigs') & (df['Unit'] == 'An')]
 
-for year in df_export_cattle['Year'].unique():
-    export_year = df_export_cattle[df_export_cattle['Year'] == year]
+for year in df_export_swine['Year'].unique():
+    export_year = df_export_swine[df_export_swine['Year'] == year]
 
     # Reset the index to avoid duplicate entries
     export_year = export_year.reset_index(drop=True)

@@ -5,7 +5,7 @@ if not os.path.exists('predictors_raw/cap_dist'):
     os.makedirs('predictors_raw/cap_dist')
 
 # Read the CSV file
-df = pd.read_csv("C:/Users/iblag/Desktop/predictors/capdist.csv")
+df = pd.read_csv("capdist.csv")
 
 country_codes = {
     "China": "CHN",
@@ -25,8 +25,8 @@ country_codes = {
 
 countries = ['China', 'Italy', 'Netherlands', 'Turkey', 'France', 'Denmark', "Sweden", 'Namibia', 'USA', 'Japan',
              'Canada', 'United_Kingdom', 'Mexico', 'Australia']
+
 # Create an empty DataFrame with countries as both index and columns
-#matrix_df = pd.DataFrame(index=country_codes.keys(), columns=country_codes.keys())
 matrix_df = pd.DataFrame(index=countries, columns=countries)
 
 # Iterate through every value in the DataFrame
